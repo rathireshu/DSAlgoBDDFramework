@@ -1,0 +1,8 @@
+/target/
+/test-output/
+/test-output-pdf/
+/test-output-html/
+/Logs/
+/.settings/
+*.classpath
+*.project
