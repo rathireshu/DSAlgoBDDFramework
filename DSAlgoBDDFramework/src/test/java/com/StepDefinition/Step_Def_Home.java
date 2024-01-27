@@ -3,7 +3,6 @@ package com.StepDefinition;
 import org.testng.Assert;
 import com.DriverFactory.DriverFactory;
 import com.PageObjects.POM_HomePage;
-import com.Utilities.ConfigReader;
 import com.Utilities.LoggerLoad;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -16,8 +15,6 @@ public class Step_Def_Home {
 	@Given("User is already on dsportalapp home page")
 	public void user_is_already_on_dsportalapp_home_page_and_not_sign_in() {
 		
-		//driver.get(pro.getProperty("url"));
-		DriverFactory.getDriver().get(ConfigReader.getProperties().getProperty("url"));
 		homePage = new POM_HomePage(DriverFactory.getDriver());		
 		String tittle = homePage.getHomePageTitle();
 		LoggerLoad.info("Home Page tittle is :"+tittle);

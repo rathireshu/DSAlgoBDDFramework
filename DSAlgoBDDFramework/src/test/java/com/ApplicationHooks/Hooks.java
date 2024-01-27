@@ -13,18 +13,21 @@ public class Hooks {
 
 	private WebDriver driver;
 	private DriverFactory dFactory;
-	Properties pro;
+	private Properties prop;
 
 	@Before
-	public void openBrowser() {
-		pro = ConfigReader.getProperties();
-		String browseName = pro.getProperty("browser");
+	public void setUp() {
+		prop = ConfigReader.getProperties();
+		String browseName = prop.getProperty("browser");
 		dFactory = new DriverFactory();
 		driver = dFactory.initializeDriver(browseName);
+		driver.get(prop.getProperty("url"));
+				
 	}
 
 	@After
 	public void tearDown() {
+		if(driver!=null)
 		driver.quit();
 	}
 }

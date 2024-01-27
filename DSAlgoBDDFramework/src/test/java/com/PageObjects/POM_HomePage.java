@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.Utilities.ElementUtil;
+
 public class POM_HomePage {
 
 	private WebDriver driver;
@@ -42,11 +44,11 @@ public class POM_HomePage {
 	}
 
 	public boolean verifyDataStructureDDPresent() {
-		return dataStructureDD.isDisplayed();
+		return ElementUtil.isElementDisplayedStatus(driver, dataStructureDD, 2);
 	}
 
 	public void clickDataStructureDD() {
-		dataStructureDD.click();
+		ElementUtil.clickOnElement(driver, dataStructureDD, 3);
 	}
 
 	public int verifyDataStrDDListCount() {

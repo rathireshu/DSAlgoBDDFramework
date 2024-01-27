@@ -8,9 +8,10 @@ import io.cucumber.testng.CucumberOptions;
                  glue = {"com.StepDefinition", "com.ApplicationHooks" }, 
                  monochrome = true, 
 		         dryRun = false, 
-		         plugin = { "pretty", "html:target/dsalgoReport.html" }
+		         plugin = { "pretty", 		        		 
+		        		 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
+		        		 }
 				)
-
 public class TestRunner extends AbstractTestNGCucumberTests {
 
 }
