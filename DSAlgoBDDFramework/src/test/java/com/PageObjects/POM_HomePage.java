@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.Utilities.Constant;
 import com.Utilities.ElementUtil;
 
 public class POM_HomePage {
@@ -35,7 +36,11 @@ public class POM_HomePage {
 	WebElement signInBtn;	
 
 	@FindBy(xpath = "//div[contains(text(),'You are not logged in')]")
-	List<WebElement> notSignInMsglist;
+	List<WebElement> notSignInMsglist; //to check its visibility on page we need to use list as this ele is not in DOM
+	
+	@FindBy(xpath = "//div[@class='alert alert-primary']")
+	WebElement homePage_alertMsg;
+	
 
 //3.action methods for page i.e feature of the page
 
@@ -44,11 +49,11 @@ public class POM_HomePage {
 	}
 
 	public boolean verifyDataStructureDDPresent() {
-		return ElementUtil.isElementDisplayedStatus(driver, dataStructureDD, 2);
+		return ElementUtil.isElementDisplayedStatus(driver, dataStructureDD, Constant.EXPLICIT_ELEMENT_WAIT_TIME);
 	}
 
 	public void clickDataStructureDD() {
-		ElementUtil.clickOnElement(driver, dataStructureDD, 3);
+		ElementUtil.clickOnElement(driver, dataStructureDD, Constant.EXPLICIT_ELEMENT_WAIT_TIME);
 	}
 
 	public int verifyDataStrDDListCount() {
@@ -56,7 +61,8 @@ public class POM_HomePage {
 	}
 
 	public boolean verifyRegisterBtnPresent() {
-		return registerBtn.isDisplayed();
+		
+		return ElementUtil.isElementDisplayedStatus(driver, registerBtn, Constant.EXPLICIT_ELEMENT_WAIT_TIME);
 	}
 
 	public boolean verifySignInBtnPresent() {
@@ -89,4 +95,32 @@ public class POM_HomePage {
 
 	}
 
+	public void clickOnSignInBtn() {
+		ElementUtil.clickOnElement(driver, signInBtn, Constant.EXPLICIT_ELEMENT_WAIT_TIME);
+	}
+	
+	public String getTextLoginSuccessMsg() {
+		return homePage_alertMsg.getText();
+	}
+	
+   public POM_SignInPage verifyUserRedirectedToSignInPage() {
+	
+	   //when ever user redirected to new page that method shld return new page object.	   
+	   return new POM_SignInPage(driver);//this driver has a reference home page driver
+	}
+	 
+   public void clickOnRegisterBtn() {
+	   
+	   ElementUtil.clickOnElement(driver, registerBtn, Constant.EXPLICIT_ELEMENT_WAIT_TIME);
+	}
+	
+  public POM_RegisterPage verifyUserRedirectedToRegisterPage() {
+		
+	  return new POM_RegisterPage(driver);
+		
+	}
+	
+	
+	
+	
 }

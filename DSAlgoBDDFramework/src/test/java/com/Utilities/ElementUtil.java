@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class ElementUtil {
 
 public static WebElement waitForElementVisibility(WebDriver driver, WebElement element, long durationInSeconds) {
-	
+	//explicit wait
 	WebElement webElement = null;
 	try {
 		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(durationInSeconds));
@@ -79,8 +79,8 @@ public static String getTextFromElement(WebDriver driver, WebElement element, lo
 		LoggerLoad.error("getTextFromElement()::The element "+element.toString() +"is not visiable. Exception is: "+e.getMessage());
 	}
 	return webElement != null ? webElement.getText() : null;
-	
 }
+
 public static void mouseOverElementandClick(WebDriver driver, WebElement element, long durationInSeconds) {
 	
 	WebElement webElement = waitForElementVisibility(driver, element, durationInSeconds);

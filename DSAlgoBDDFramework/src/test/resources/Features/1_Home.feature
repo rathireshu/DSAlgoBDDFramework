@@ -18,7 +18,7 @@ Feature: Home page verification feature
    Scenario: user should be able to access any data structure from drop down without sign in
     Given User is already on dsportalapp home page
     When User is not signed in already 
-    And User click on data structure drop down
+    And User click on data structure drop down	
     Then User should see six data structure options in list
   
   @tag4
@@ -28,3 +28,15 @@ Feature: Home page verification feature
     And User verify Register and Sign-In buttons are displayed    
     Then verify Register and Sign-In buttons should be enabled    
    
+  @tag5
+  Scenario: User should be redirected to login page after click on Sign-In button
+    Given User is already on dsportalapp home page
+    When User click on Sign-In buttons    
+    Then User should be redirected to login page
+ 
+ @tag6
+  Scenario: User should be redirected to Register page after click on Register button
+    Given User is already on dsportalapp home page
+    When User click on Register buttons    
+    Then User should be redirected to Register page
+     

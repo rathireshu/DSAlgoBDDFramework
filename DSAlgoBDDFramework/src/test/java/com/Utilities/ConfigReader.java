@@ -13,7 +13,7 @@ public class ConfigReader {
 	private static void initialize() {
 	try {
 		pro = new Properties();
-		FileReader file = new FileReader("src/test/resources/com.config/config.properties");
+		FileReader file = new FileReader("src/test/resources/Config/config.properties");
 		pro.load(file);
 	    } catch (IOException e) {
 		LoggerLoad.error("Eror while loading the properties file."+ e.getMessage());
