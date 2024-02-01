@@ -9,8 +9,8 @@ public class Constant {
 	//Explicit wait applies to specific web elements. It is more precise & helps avoid unnecessary delays.
 	     public static final int EXPLICIT_ELEMENT_WAIT_TIME=20;
 	
-         public static final String HOME_PAGE_TITTLE= "NumpyNinja";
-         public static final String SIGN_IN_PAGE_TITTLE= "Login";
-         public static final String REGISTER_PAGE_TITTLE= "Registration";
+         public static final String HOME_PAGE_TITLE= "NumpyNinja";
+         public static final String SIGN_IN_PAGE_TITLE= "Login";
+         public static final String REGISTER_PAGE_TITLE= "Registration";
         
 }

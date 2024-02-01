@@ -11,7 +11,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class Step_Def_Home {
+public class StepDef_Home {
 
 	POM_HomePage homePage ;
 	POM_SignInPage signInPage;
@@ -22,9 +22,9 @@ public class Step_Def_Home {
 	public void user_is_already_on_dsportalapp_home_page_and_not_sign_in() {
 		
 		homePage = new POM_HomePage(DriverFactory.getDriver());		
-		String tittle = homePage.getHomePageTitle();
-		LoggerLoad.info("Home Page tittle is :-"+tittle);
-		Assert.assertEquals(tittle, Constant.HOME_PAGE_TITTLE);
+		String title = homePage.getHomePageTitle();
+		LoggerLoad.info("Home Page title is :-"+title);
+		Assert.assertEquals(title, Constant.HOME_PAGE_TITLE);
 	}
 	@Given("User is not signed in already")
 	public void User_is_not_signed_in_already() {
@@ -45,8 +45,8 @@ public class Step_Def_Home {
 		LoggerLoad.info("Register and sign in btns are present");
 	}
 
-	@Then("verify Register and Sign-In buttons should be enabled")
-	public void verify_register_and_sign_in_buttons_should_be_enabled() {
+	@Then("verify Register and Sign-In buttons should be clickable")
+	public void verify_register_and_sign_in_buttons_should_be_clickable() {
 		Assert.assertTrue(homePage.verifyRegisterBtnEnable());
 		Assert.assertTrue(homePage.verifySignInBtnEnable());
 	}
@@ -82,9 +82,9 @@ public class Step_Def_Home {
     public void User_should_be_redirected_to_login_page() {
     	
     	signInPage = homePage.verifyUserRedirectedToSignInPage();//this method will return signin page object    	 
-    	String tittle = signInPage.getSignInPageTitle();
-		LoggerLoad.info("SignIn Page actual tittle is :-"+tittle);
-		Assert.assertEquals(tittle, Constant.SIGN_IN_PAGE_TITTLE);    
+    	String title = signInPage.getSignInPageTitle();
+		LoggerLoad.info("SignIn Page actual title is :-"+title);
+		Assert.assertEquals(title, Constant.SIGN_IN_PAGE_TITLE);    
     }
 
     @When("User click on Register buttons")	  
@@ -98,9 +98,9 @@ public class Step_Def_Home {
     public void User_should_be_redirected_to_Register_page() {
     	
     	registerPage = homePage.verifyUserRedirectedToRegisterPage();
-    	String tittle = registerPage.getRegisterPageTittle();
-		LoggerLoad.info("Register Page actual tittle is :-"+tittle);
-		Assert.assertEquals(tittle, Constant.REGISTER_PAGE_TITTLE);    
+    	String title = registerPage.getRegisterPageTitle();
+		LoggerLoad.info("Register Page actual title is :-"+title);
+		Assert.assertEquals(title, Constant.REGISTER_PAGE_TITLE);    
     }
     
     

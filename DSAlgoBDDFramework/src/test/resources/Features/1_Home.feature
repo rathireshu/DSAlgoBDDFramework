@@ -22,11 +22,11 @@ Feature: Home page verification feature
     Then User should see six data structure options in list
   
   @tag4
-  Scenario: verify Register and Sign-In button are displayed and enabled
+  Scenario: verify Register and Sign-In button are displayed and clickable
     Given User is already on dsportalapp home page
     When User is not signed in already
     And User verify Register and Sign-In buttons are displayed    
-    Then verify Register and Sign-In buttons should be enabled    
+    Then verify Register and Sign-In buttons should be clickable    
    
   @tag5
   Scenario: User should be redirected to login page after click on Sign-In button

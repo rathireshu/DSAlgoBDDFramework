@@ -4,7 +4,7 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(tags="",
-		         features = "src/test/resources/Features/3_SignIn.feature", 
+		         features = "src/test/resources/Features/2_Register.feature", 
                  glue = {"com.StepDefinition", "com.ApplicationHooks" }, 
                  monochrome = true, 
 		         dryRun = false, 

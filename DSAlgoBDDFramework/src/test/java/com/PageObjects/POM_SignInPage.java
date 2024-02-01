@@ -1,15 +1,12 @@
 package com.PageObjects;
 
-import java.time.Duration;
-import java.util.List;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import com.Utilities.Constant;
 import com.Utilities.ElementUtil;
+import com.Utilities.LoggerLoad;
 
 public class POM_SignInPage {
 
@@ -20,7 +17,6 @@ public class POM_SignInPage {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	
 		@FindBy(name = "username")
 		WebElement signInPage_username;
 		@FindBy(name = "password")
@@ -30,9 +26,6 @@ public class POM_SignInPage {
 		
 		@FindBy(xpath = "//div[contains(text(),'Invalid Username and Password')]")
 		WebElement signInPage_invalidErrMsg;
-		
-		@FindBy(xpath = "//*[contains(text(),'Please fill out this field.')]")
-		List<WebElement> signInPage_emptyFeildErrorMsg;
 		
 		@FindBy(xpath = "//a[text()='Register!']")
 		WebElement signInPage_registerLink;
@@ -47,25 +40,24 @@ public class POM_SignInPage {
 		public void enterValidCredentials(String validUserName,String validPwd) {
 			ElementUtil.typeInputIntoElement(driver, signInPage_username, validUserName, Constant.EXPLICIT_ELEMENT_WAIT_TIME); 
 			ElementUtil.typeInputIntoElement(driver, signInPage_password, validPwd, Constant.EXPLICIT_ELEMENT_WAIT_TIME); 
-			
 		}
 		
 		public void clickOnLoginBtn() {
 			 ElementUtil.clickOnElement(driver, signInPage_loginBtn, Constant.EXPLICIT_ELEMENT_WAIT_TIME);
 		}
-		
-		public int verifyBlankFeildErrorMsgSize() {
+		public  String getPopUpTextOnBlankField() {
 			
-			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Constant.EXPLICIT_ELEMENT_WAIT_TIME));
-			
-			return signInPage_emptyFeildErrorMsg.size();
-			
+		    String isRequiredAttPresent = signInPage_username.getAttribute("required");
+		    LoggerLoad.info("Is required attribute present on element :--"+isRequiredAttPresent);		    
+			String blankFieldPopUpText = signInPage_username.getAttribute("validationMessage");
+			return blankFieldPopUpText;
 		}
 		public String getInvalidLoginErrorMsgText() {
 			
 			String alerText= ElementUtil.getTextFromElement(driver, signInPage_alertMsg, Constant.EXPLICIT_ELEMENT_WAIT_TIME);
 			return alerText;
-			
 		}
-	
+		public void clickOnRegisterLink() {
+			 ElementUtil.clickOnElement(driver, signInPage_registerLink, Constant.EXPLICIT_ELEMENT_WAIT_TIME);
+		}
 }

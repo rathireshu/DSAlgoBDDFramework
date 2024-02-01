@@ -26,9 +26,9 @@ public class StepDef_SignIn {
 		homePage = new POM_HomePage(DriverFactory.getDriver());
 		homePage.clickOnSignInBtn();
 		signInPage = homePage.verifyUserRedirectedToSignInPage();
-		String tittle = signInPage.getSignInPageTitle();
-		LoggerLoad.info("SignIn Page actual tittle is :-" + tittle);
-		Assert.assertEquals(tittle, Constant.SIGN_IN_PAGE_TITTLE);
+		String title = signInPage.getSignInPageTitle();
+		LoggerLoad.info("SignIn Page actual title is :-" + title);
+		Assert.assertEquals(title, Constant.SIGN_IN_PAGE_TITLE);
 	}
 
 	@When("User enters valid {string} and valid {string}")
@@ -44,9 +44,9 @@ public class StepDef_SignIn {
 	@Then("User should be regirected to Home page with success message {string}")
 	public void user_should_be_regirected_to_home_page_with_success_message(String loginSuccessMsg) {
 
-		LoggerLoad.info("Home Page tittle is :-" + homePage.getHomePageTitle());
+		LoggerLoad.info("Home Page title is :-" + homePage.getHomePageTitle());
 
-		Assert.assertEquals(homePage.getHomePageTitle(), Constant.HOME_PAGE_TITTLE);
+		Assert.assertEquals(homePage.getHomePageTitle(), Constant.HOME_PAGE_TITLE);
 		Assert.assertEquals(homePage.getTextLoginSuccessMsg(), loginSuccessMsg);
 	}
 
@@ -74,22 +74,39 @@ public class StepDef_SignIn {
 		String invalidAlertMsg = signInPage.getInvalidLoginErrorMsgText();
 		LoggerLoad.info("Login failed as user entered invalid login credentials." + loginErrorMsg);		
 		Assert.assertEquals(invalidAlertMsg, loginErrorMsg);
-				
+	}
+
+	@When("User provides username {string} and password {string}")
+	public void user_provides_blank_username(String username, String pwd) {
+		LoggerLoad.info("user is entering blank username...");
+		signInPage.enterValidCredentials(username, pwd);
+	}
+
+	@Then("User should get alert message {string} below username {string} field.")
+	public void user_should_get_alert_message_below_username_field(String expectedPopUpTextUserName, String string2) {
+		LoggerLoad.info("User should see expected PopUp msg for blank username." + expectedPopUpTextUserName);		
+		String actualPopUpText = signInPage.getPopUpTextOnBlankField();
+		LoggerLoad.info("Actual PopUp msg below username field..:-  "+actualPopUpText);
+        Assert.assertEquals(actualPopUpText, expectedPopUpTextUserName);
+	}
+
+	@When("User provides username {string} and password {string}.")
+	public void user_provides_blank_password(String username, String pwd) {
+		LoggerLoad.info("user is entering blank password...");
+		signInPage.enterValidCredentials(username, pwd);
+	}
+
+	@Then("User should get alert message {string} below password {string} field.")
+	public void user_should_get_alert_message_below_password_field(String expectedPopUpTextPassword, String string2) {
+		LoggerLoad.info("User should see expected PopUp msg for blank password." + expectedPopUpTextPassword);		
+		String actualPopUpText = signInPage.getPopUpTextOnBlankField();
+		LoggerLoad.info("Actual PopUp msg below password field..:-  "+actualPopUpText);
+        Assert.assertEquals(actualPopUpText, expectedPopUpTextPassword);
 	}
 	
-	@When("Either username {string} or password {string} is blank.")
-	public void either_username_or_password_is_blank(String Uname, String pwd) {	
-		
-		signInPage.enterValidCredentials(Uname, pwd);	
-		LoggerLoad.info("user enter username as : "+Uname+" and password as : "+pwd);
+	@When("User click on Register link on SignIn page")
+	public void user_click_on_Register_link_on_SignIn_page() {
+		LoggerLoad.info("user clicked on register link from sign in page...");
+		signInPage.clickOnRegisterLink();
 	}
-
-	@Then("User should get alert message {string}")
-	public void user_should_get_alert_message(String alertMsg) {
-	    
-		LoggerLoad.info("User should see alert msg." + alertMsg);		
-		//Assert.assertTrue(signInPage.verifyBlankFeildErrorMsgSize()>0);
-	}
-
-
 }

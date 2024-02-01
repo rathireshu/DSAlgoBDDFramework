@@ -3,7 +3,7 @@ Feature: SignIn validation feature
  @tag1
   Scenario: Sign-in with valid user name and valid passwrod
     Given User is already on SignIn page
-    When User enters valid "sonali" and valid "Dsalgo@1"
+    When User enters valid "reshu146" and valid "Dsalgo@146"
     And User click on login button
     Then User should be regirected to Home page with success message "You are logged in" 
     And Username should be displayed along with Sign-out button on home page.
@@ -22,14 +22,27 @@ Feature: SignIn validation feature
       | loginData  |     3     | Invalid Username and Password|
   
    @tag3
-  Scenario Outline: Sign-in with empty username and passwrod 
+  Scenario: Verification for PopUp message appears for blank username 
     Given User is already on SignIn page
-    When  Either username "<userNameValue>" or password "<passwordValue>" is blank.
+    When User provides username " " and password "test@123"
     And User click on login button
-    Then User should get alert message "<alertMessage>" 
+    Then User should get alert message "Please fill out this field." below username "username" field.
     
+    @tag4
+  Scenario: Verification for PopUp message appears for blank password 
+    Given User is already on SignIn page
+    When User provides username "test123" and password " ".
+    And User click on login button
+    Then User should get alert message "Please fill out this field." below password "password" field.
     
-    Examples: 
-      | userNameValue  | passwordValue | alertMessage               |
-      |                |    dksdmsdm   | Please fill out this field.|
-      | test6438743    |               | Please fill out this field.|
+  @tag5
+  Scenario: Register link on varification 
+    Given User is already on SignIn page
+    When User click on Register link on SignIn page
+    Then User should be redirected to Register page
+    
+      
+   
+      
+   
+    

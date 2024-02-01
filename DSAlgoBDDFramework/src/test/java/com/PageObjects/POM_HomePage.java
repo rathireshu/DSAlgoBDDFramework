@@ -41,7 +41,8 @@ public class POM_HomePage {
 	@FindBy(xpath = "//div[@class='alert alert-primary']")
 	WebElement homePage_alertMsg;
 	
-
+	
+	
 //3.action methods for page i.e feature of the page
 
 	public String getHomePageTitle() {
