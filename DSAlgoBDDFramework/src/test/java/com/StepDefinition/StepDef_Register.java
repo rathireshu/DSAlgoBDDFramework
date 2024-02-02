@@ -106,7 +106,6 @@ public class StepDef_Register {
 		registerPage.enterPassword(password);
 		String passwordConf =reader.getTestDataFromSheet(sheetName).get(rowNum).get("confirmpassword");
 		registerPage.enterPasswordConfirmation(passwordConf);
-		
 	}
 
 	@Then("User should be regirected to Home page with success message {string}.")
@@ -116,7 +115,6 @@ public class StepDef_Register {
 	    homePage  = registerPage.verifyUserRedirectedToHomePage();
 	   String userCreationSuccessMsg = homePage.getTextLoginSuccessMsg();
 	   LoggerLoad.info("user creation actual SuccessMsg.:- "+userCreationSuccessMsg);
-	   //Assert.assertEquals(expetedSuccessMsg, userCreationSuccessMsg);
 	   Assert.assertTrue(userCreationSuccessMsg.contains(userName));
 	}
 
