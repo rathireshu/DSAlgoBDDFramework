@@ -33,7 +33,14 @@ public class POM_HomePage {
 	WebElement registerBtn;
 
 	@FindBy(xpath = "//a[text()='Sign in']")
-	WebElement signInBtn;	
+	WebElement signInBtn;
+	
+	@FindBy(xpath = "//div[@class='navbar-nav']/ul/a[2]")
+	WebElement loggedInUserNameLink;
+	
+	
+	@FindBy(xpath = "//a[text()='Sign out']")
+	WebElement signOutBtn;
 
 	@FindBy(xpath = "//div[contains(text(),'You are not logged in')]")
 	List<WebElement> notSignInMsglist; //to check its visibility on page we need to use list as this ele is not in DOM
@@ -100,15 +107,37 @@ public class POM_HomePage {
 		ElementUtil.clickOnElement(driver, signInBtn, Constant.EXPLICIT_ELEMENT_WAIT_TIME);
 	}
 	
+	public POM_SignInPage verifyUserRedirectedToSignInPage() {
+		
+		   //when ever user redirected to new page that method shld return new page object.	   
+		   return new POM_SignInPage(driver);//this driver has a reference home page driver
+		}
+	
+	public void clickOnSignOutBtn() {
+		ElementUtil.clickOnElement(driver, signOutBtn, Constant.EXPLICIT_ELEMENT_WAIT_TIME);
+	}
+	
+	
+	public boolean verifyloggedInUserNameLinkPresent() {
+		
+		return loggedInUserNameLink.isDisplayed();
+			
+	}
+	
+    public String getloggedInUserNameLinkText() {
+		
+		return ElementUtil.getTextFromElement(driver, loggedInUserNameLink, Constant.EXPLICIT_ELEMENT_WAIT_TIME);
+			
+	}
+	
 	public String getTextLoginSuccessMsg() {
 		return homePage_alertMsg.getText();
 	}
 	
-   public POM_SignInPage verifyUserRedirectedToSignInPage() {
-	
-	   //when ever user redirected to new page that method shld return new page object.	   
-	   return new POM_SignInPage(driver);//this driver has a reference home page driver
+	public String getTextSignOutSuccessMsg() {
+		return homePage_alertMsg.getText();
 	}
+	
 	 
    public void clickOnRegisterBtn() {
 	   

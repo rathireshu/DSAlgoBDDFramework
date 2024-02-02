@@ -28,7 +28,10 @@ public class StepDef_Home {
 	}
 	@Given("User is not signed in already")
 	public void User_is_not_signed_in_already() {
-		LoggerLoad.info("user is not signed in already");
+		LoggerLoad.info("user is not signed in already as register and sign in button is displayed on home page.");
+		
+		Assert.assertTrue(homePage.verifySignInBtnPresent());
+		Assert.assertTrue(homePage.verifyRegisterBtnPresent());
 		
 	}
 	

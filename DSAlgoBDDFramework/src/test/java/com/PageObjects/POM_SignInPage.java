@@ -44,7 +44,16 @@ public class POM_SignInPage {
 		
 		public void clickOnLoginBtn() {
 			 ElementUtil.clickOnElement(driver, signInPage_loginBtn, Constant.EXPLICIT_ELEMENT_WAIT_TIME);
+			 
 		}
+		
+		public POM_HomePage verifyUserRedirectedToHomePage() {
+			
+			   //when ever user redirected to new page that method shld return new page object.	   
+			   POM_HomePage  homePage = new POM_HomePage(driver);//this driver has a reference home page driver
+		      return homePage;
+			}
+		
 		public  String getPopUpTextOnBlankField() {
 			
 		    String isRequiredAttPresent = signInPage_username.getAttribute("required");
@@ -60,4 +69,12 @@ public class POM_SignInPage {
 		public void clickOnRegisterLink() {
 			 ElementUtil.clickOnElement(driver, signInPage_registerLink, Constant.EXPLICIT_ELEMENT_WAIT_TIME);
 		}
+		
+		
+		public POM_RegisterPage verifyUserRedirectedToRegisterPage() {
+			
+			   //when ever user redirected to new page that method shld return new page object.	   
+			   return new POM_RegisterPage(driver);//this driver has a reference home page driver
+		      
+			}
 }
