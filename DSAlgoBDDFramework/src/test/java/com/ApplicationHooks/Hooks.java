@@ -20,7 +20,7 @@ public class Hooks {
 	@Before
 	public void setUp() {
 		//Get Browser type from config file
-		prop = ConfigReader.getProperties();
+		prop = ConfigReader.getPropertyObject();
 		String browseName = prop.getProperty("browser");
 		
 		//Initialize driver from driver factory class
@@ -32,7 +32,7 @@ public class Hooks {
 
 	@After
 	public void tearDown() {
-		LoggerLoad.info("Closing driver...");
+		LoggerLoad.info("Closing driver from hook's teardown method...");
 		if(driver!=null)
 		driver.quit();
 	}
