@@ -1,13 +1,20 @@
 package com.ApplicationHooks;
 
+import java.io.ByteArrayInputStream;
 import java.util.Properties;
+
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import com.DriverFactory.DriverFactory;
 import com.Utilities.ConfigReader;
 import com.Utilities.LoggerLoad;
 
+
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
+import io.qameta.allure.Allure;
 
 public class Hooks {
 
@@ -31,8 +38,15 @@ public class Hooks {
 	}
 
 	@After
-	public void tearDown() {
+	public void tearDown(Scenario scenario) {
+		
+		if(scenario.isFailed())
+		{
+			byte[] screenShot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+			Allure.addAttachment("Failed Scenario Screenshot", new ByteArrayInputStream(screenShot));
+		}
 		LoggerLoad.info("Closing driver from hook's teardown method...");
+		
 		if(driver!=null)
 		driver.quit();
 	}

@@ -1,5 +1,6 @@
 package com.Utilities;
 
+import com.PageObjects.POM_ArraysPage;
 import com.PageObjects.POM_DataStrucIntroPage;
 import com.PageObjects.POM_GraphPage;
 import com.PageObjects.POM_HomePage;
@@ -31,7 +32,7 @@ public class PicoDependencyInjector {
 	 public	String registredUserName;
 	 public POM_DataStrucIntroPage dataStrIntroPage;
 	 public POM_StackPage stackPage;
-	 
+	 public POM_ArraysPage arraysPage;
 	 
 	
 }

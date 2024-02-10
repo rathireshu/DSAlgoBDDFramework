@@ -13,6 +13,7 @@ public class Constant {
          public static final String SIGN_IN_PAGE_TITLE= "Login";
          public static final String REGISTER_PAGE_TITLE= "Registration";
          public static final String GRAPH_PAGE_TITLE= "Graph";
+         public static final String ARRAYS_PAGE_TITLE= "Array";
          public static final String QUEUE_PAGE_TITLE= "Queue";
          public static final String STACK_PAGE_TITLE= "Stack";
          public static final String DATA_STRUCTURES_INTRO_PAGE_TITLE= "Data Structures-Introduction";

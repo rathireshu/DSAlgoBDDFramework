@@ -221,5 +221,10 @@ public class POM_HomePage {
   		
   	}
 	
+  public POM_ArraysPage verifyUserRedirectedToArraysPage() {
+		
+  	  return new POM_ArraysPage (driver);
+  		
+  	}
 	
 }
