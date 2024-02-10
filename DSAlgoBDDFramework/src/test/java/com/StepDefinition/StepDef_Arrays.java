@@ -36,7 +36,7 @@ public class StepDef_Arrays {
 		
 		picoDepInj.arraysPage = picoDepInj.homePage.verifyUserRedirectedToArraysPage();
 		String arraysPageTitle = picoDepInj.arraysPage.getArraysPageTitle();
-		LoggerLoad.info("stack Page title :--" + arraysPageTitle);
+		LoggerLoad.info("array Page title :--" + arraysPageTitle);
 		Assert.assertEquals(Constant.ARRAYS_PAGE_TITLE, arraysPageTitle);
 	}
 
@@ -50,9 +50,9 @@ public class StepDef_Arrays {
 	@Then("user should redirect to Array in python page")
 	public void user_should_redirect_to_array_in_python_page() {
 
-		String ArraysInPyPageUrl = picoDepInj.arraysPage.getArraysInPythonPageUrl();
-		LoggerLoad.info("User redirected to Arrays In Python Page :--" + ArraysInPyPageUrl);
-		Assert.assertTrue(ArraysInPyPageUrl.contains("array/arrays-in-python/"));
+		String arraysInPyPageUrl = picoDepInj.arraysPage.getArraysInPythonPageUrl();
+		LoggerLoad.info("User redirected to Arrays In Python Page :--" + arraysInPyPageUrl);
+		Assert.assertTrue(arraysInPyPageUrl.contains("array/arrays-in-python/"));
 	}
 
 	@When("user clicks on TryHere button for arrays flow")

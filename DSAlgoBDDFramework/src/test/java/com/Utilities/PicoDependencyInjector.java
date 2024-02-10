@@ -4,6 +4,7 @@ import com.PageObjects.POM_ArraysPage;
 import com.PageObjects.POM_DataStrucIntroPage;
 import com.PageObjects.POM_GraphPage;
 import com.PageObjects.POM_HomePage;
+import com.PageObjects.POM_LinkedListPage;
 import com.PageObjects.POM_QueuePage;
 import com.PageObjects.POM_RegisterPage;
 import com.PageObjects.POM_SignInPage;
@@ -32,6 +33,7 @@ public class PicoDependencyInjector {
 	 public	String registredUserName;
 	 public POM_DataStrucIntroPage dataStrIntroPage;
 	 public POM_StackPage stackPage;
+	 public POM_LinkedListPage linkedListPage;
 	 public POM_ArraysPage arraysPage;
 	 
 	

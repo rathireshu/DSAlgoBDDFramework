@@ -3,8 +3,8 @@ package com.Runner;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
-@CucumberOptions(tags="@run",
-		         features = "src/test/resources/Features/Arrays.feature", 
+@CucumberOptions(tags="",
+		         features = "src/test/resources/Features/9_LinkedList.feature", 
                  glue = {"com.StepDefinition", "com.ApplicationHooks" }, 
                  monochrome = true, 
 		         dryRun = false, 

@@ -227,4 +227,11 @@ public class POM_HomePage {
   		
   	}
 	
+  
+  public POM_LinkedListPage verifyUserRedirectedToLinkedListPage() {
+		
+  	  return new POM_LinkedListPage (driver);
+  		
+  	}
+	
 }
