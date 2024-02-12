@@ -102,8 +102,7 @@ Feature: Graph page validation
     And user click on RUN button
     Then system should display a alert window with error message
     When user click the OK button in the alert window
-    And user click the OK button in the alert window
-          
+   
 @GraphRepresentations
   Scenario Outline: For Graph Representations system will show output for valid python input  
   

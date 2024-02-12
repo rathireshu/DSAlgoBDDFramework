@@ -159,6 +159,8 @@ public class POM_GraphPage {
 		Alert alert = driver.switchTo().alert();
 		Thread.sleep(1000);
 		alert.accept();
+		LoggerLoad.info("Alert accepted by user ...");
+	
 	}
 
 }
