@@ -1,4 +1,4 @@
-@Arrays
+@LinkedList
 Feature: Linked list Page validation
 
      
