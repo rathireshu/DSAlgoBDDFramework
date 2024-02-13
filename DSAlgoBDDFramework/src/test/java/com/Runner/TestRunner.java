@@ -5,8 +5,8 @@ import org.testng.annotations.DataProvider;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
-@CucumberOptions(tags="@run",
-		         features = "src/test/resources/Features/10_Tree.feature", 
+@CucumberOptions(tags="",
+		         features = "src/test/resources/Features/4_Graph.feature", 
                  glue = {"com.StepDefinition", "com.ApplicationHooks" }, 
                  monochrome = true, 
 		         dryRun = false, 
