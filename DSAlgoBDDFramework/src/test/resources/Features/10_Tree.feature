@@ -19,7 +19,7 @@ Feature: Tree Page validation
     Then user should be redirect to the python editor for tree flow
     
     
-@InValidInputValidation 
+@InValidInputValidation @run
   Scenario: For Overview of Trees link system will displays error alert window for invalid input
      
     When user click on Overview of Trees link
@@ -31,7 +31,7 @@ Feature: Tree Page validation
     Then an Alert with error Message for tree flow will appears
     And user click on OK button of tree flow alert
  
-@ValidInputValidation 
+@ValidInputValidation @run
   Scenario Outline: System will show output below run button for valid python input  
   
     When user click on Overview of Trees link
