@@ -31,7 +31,7 @@ Feature: Tree Page validation
     Then an Alert with error Message for tree flow will appears
     And user click on OK button of tree flow alert
  
-@ValidInputValidation @run
+@ValidInputValidation 
   Scenario Outline: System will show output below run button for valid python input  
   
     When user click on Overview of Trees link
