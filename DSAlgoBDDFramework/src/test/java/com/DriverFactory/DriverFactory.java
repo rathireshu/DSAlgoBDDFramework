@@ -5,7 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.safari.SafariDriver;
 import com.Utilities.Constant;
 import com.Utilities.LoggerLoad;
@@ -22,22 +24,24 @@ public class DriverFactory {
 		try {
 			if (browser.equalsIgnoreCase("chrome")) {
 				LoggerLoad.info("Initializing Chrome Browser in headless mode...");
-				
-				//Add options for --headless browser launch
-	            ChromeOptions chromeOptions = new ChromeOptions();
+				ChromeOptions chromeOptions = new ChromeOptions();
 	            chromeOptions.addArguments("headless");
 	            chromeOptions.addArguments("window-size=1366,768");          
-	           // driver = new ChromeDriver(chromeOptions);
-						
-				thdriver.set(new ChromeDriver(chromeOptions));
-				
-				
+	           	thdriver.set(new ChromeDriver(chromeOptions));
+								
 			} else if (browser.equalsIgnoreCase("firefox")) {
-				LoggerLoad.info("Initializing Firefox Browser...");
-				thdriver.set(new FirefoxDriver());
+				LoggerLoad.info("Initializing Firefox Browser in headless mode....");
+				FirefoxOptions firefoxOptions=new FirefoxOptions();
+				firefoxOptions.addArguments("headless");
+				firefoxOptions.addArguments("window-size=1366,768"); 
+				thdriver.set(new FirefoxDriver(firefoxOptions));
 			} else if (browser.equals("edge")) {
-				LoggerLoad.info("Initializing edge Browser...");
-				thdriver.set(new EdgeDriver());
+				LoggerLoad.info("Initializing edge Browser in headless mode....");
+				
+				EdgeOptions edgeOptions=new EdgeOptions();
+				edgeOptions.addArguments("--headless");
+				edgeOptions.addArguments("window-size=1366,768");
+				thdriver.set(new EdgeDriver(edgeOptions));
 			} else if (browser.equals("safaridriver")) {
 				LoggerLoad.info("Initializing safari Browser...");
 				thdriver.set(new SafariDriver());
