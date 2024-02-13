@@ -86,8 +86,6 @@ public class StepDef_Queue {
 		picoDepInj.queuePage.clickOnTryHereBtn();
 	}
 	
-	
-
 	@Then("user should be redirect to the python editor page")
 	public void user_should_be_redirect_to_the_python_editor_page() {
 	   
@@ -104,14 +102,12 @@ public class StepDef_Queue {
 		picoDepInj.queuePage.sendInvalidInputIntoPyEditor(invalidInput);//test123
 	}
 	
-	
 	@When("user click on RUN button for queue")
 	public void user_click_on_run_button_for_queue() throws InterruptedException {
 		
 		LoggerLoad.info("user clicking on run btn ");
 		picoDepInj.queuePage.clickRunBtn();
 	}
-	
 	
 	@Then("user should get an Alert with error Message")
 	public void user_should_get_an_alert_with_error_message() {
@@ -205,7 +201,7 @@ public class StepDef_Queue {
 	public void user_redirected_to_the_practice_questions_page() {
 	    
 		String practiceQuestionsPageUrl = picoDepInj.queuePage.getPracticeQuestionsPageUrl();
-		LoggerLoad.info("User redirected to Queue Operations Page :--" + practiceQuestionsPageUrl);
+		LoggerLoad.info("User redirected to practice questions  Page :--" + practiceQuestionsPageUrl);
 		Assert.assertTrue(practiceQuestionsPageUrl.contains("queue/practice"));
 		
 	}

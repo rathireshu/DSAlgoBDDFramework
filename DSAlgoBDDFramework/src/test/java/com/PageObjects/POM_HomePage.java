@@ -234,4 +234,10 @@ public class POM_HomePage {
   		
   	}
 	
+  
+  public POM_TreePage verifyUserRedirectedToTreePage() {
+		
+  	  return new POM_TreePage (driver);
+  		
+  	}
 }

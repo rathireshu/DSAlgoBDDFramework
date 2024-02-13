@@ -128,7 +128,7 @@ Feature: Queue Page validation
     Then user should get an Alert with error Message
     And user click the alert OK button 
    
-  @ImplementationUsingArray
+  @ImplementationUsingArray 
   Scenario Outline: For Implementation using Array system will show output for valid python input  
   
     Given user is already on Queue page
@@ -136,7 +136,7 @@ Feature: Queue Page validation
     Then user should redirect to Implementation using Array page
      When user clicks on TryHere button from queue
     Then user should be redirect to the python editor page
-    When for queue user enters valid python code from test sheet "<SheetName>" and <RowNumber>
+    When for queue user enters valid python code from test sheet "<SheetName>" and <RowNumber>  
     And user click on RUN button for queue
     Then for queue flow console should display result "<validResult>"
   
@@ -172,7 +172,7 @@ Feature: Queue Page validation
     Then user should get an Alert with error Message
     And user click the alert OK button 
    
-  @QueueOperations
+  @QueueOperations 
   Scenario Outline: For Queue Operations system will show output for valid python input  
   
     Given user is already on Queue page
@@ -193,7 +193,7 @@ Feature: Queue Page validation
       | pythonCode |     4     | [4, 9, 9, 49, 121] |  
     
   
-  @PracticeQuestion
+  @PracticeQuestion 
   Scenario: Open the practice Question Page 
   
     Given user is already on Queue page

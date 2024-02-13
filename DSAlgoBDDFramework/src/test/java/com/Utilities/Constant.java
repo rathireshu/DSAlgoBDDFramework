@@ -15,6 +15,7 @@ public class Constant {
          public static final String GRAPH_PAGE_TITLE= "Graph";
          public static final String ARRAYS_PAGE_TITLE= "Array";
          public static final String QUEUE_PAGE_TITLE= "Queue";
+         public static final String TREE_PAGE_TITLE= "Tree";
          public static final String STACK_PAGE_TITLE= "Stack";
          public static final String LINKED_LIST_PAGE_TITLE= "Linked List";
          public static final String DATA_STRUCTURES_INTRO_PAGE_TITLE= "Data Structures-Introduction";

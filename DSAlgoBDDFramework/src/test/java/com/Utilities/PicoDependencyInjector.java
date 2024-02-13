@@ -9,6 +9,7 @@ import com.PageObjects.POM_QueuePage;
 import com.PageObjects.POM_RegisterPage;
 import com.PageObjects.POM_SignInPage;
 import com.PageObjects.POM_StackPage;
+import com.PageObjects.POM_TreePage;
 
 public class PicoDependencyInjector {
 
@@ -31,6 +32,7 @@ public class PicoDependencyInjector {
 	 public String validPassword;
 	 public String loggedInUsername;
 	 public	String registredUserName;
+	 public POM_TreePage treePage;
 	 public POM_DataStrucIntroPage dataStrIntroPage;
 	 public POM_StackPage stackPage;
 	 public POM_LinkedListPage linkedListPage;
