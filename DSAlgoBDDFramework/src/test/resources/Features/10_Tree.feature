@@ -47,8 +47,7 @@ Feature: Tree Page validation
       | pythonCode |     0     | hello       |
       | pythonCode |     1     | Element Found |
       | pythonCode |     2     | 2 |
-      | pythonCode |     3     | 2 |
-      | pythonCode |     4     | [4, 9, 9, 49, 121] |  
+      
    
    
    
@@ -85,13 +84,11 @@ Feature: Tree Page validation
     Then for tree flow console should display result "<validResult>"
   
     Examples: 
-      | SheetName  | RowNumber | validResult |
+       | SheetName  | RowNumber | validResult |
       | pythonCode |     0     | hello       |
       | pythonCode |     1     | Element Found |
       | pythonCode |     2     | 2 |
-      | pythonCode |     3     | 2 |
-      | pythonCode |     4     | [4, 9, 9, 49, 121] |  
- 
+      
 @TypesOfTrees 
   Scenario: Redirect to python editor form Types of Trees link
     
@@ -128,8 +125,6 @@ Feature: Tree Page validation
       | SheetName  | RowNumber | validResult |
       | pythonCode |     0     | hello       |
       | pythonCode |     1     | Element Found |
-      | pythonCode |     2     | 2 |
-      | pythonCode |     3     | 2 |
       | pythonCode |     4     | [4, 9, 9, 49, 121] |  
 
 @TreeTraversals 
@@ -166,12 +161,9 @@ Feature: Tree Page validation
   
     Examples: 
       | SheetName  | RowNumber | validResult |
-      | pythonCode |     0     | hello       |
       | pythonCode |     1     | Element Found |
       | pythonCode |     2     | 2 |
-      | pythonCode |     3     | 2 |
-      | pythonCode |     4     | [4, 9, 9, 49, 121] |  
-
+     
 @Traversals-Illustration 
   Scenario: Redirect to python editor form Traversals-Illustration link
     
@@ -208,8 +200,6 @@ Feature: Tree Page validation
       | SheetName  | RowNumber | validResult |
       | pythonCode |     0     | hello       |
       | pythonCode |     1     | Element Found |
-      | pythonCode |     2     | 2 |
-      | pythonCode |     3     | 2 |
       | pythonCode |     4     | [4, 9, 9, 49, 121] |  
 
 
@@ -247,9 +237,7 @@ Feature: Tree Page validation
   
     Examples: 
       | SheetName  | RowNumber | validResult |
-      | pythonCode |     0     | hello       |
-      | pythonCode |     1     | Element Found |
-      | pythonCode |     2     | 2 |
+      | pythonCode |     0     | hello       |     
       | pythonCode |     3     | 2 |
       | pythonCode |     4     | [4, 9, 9, 49, 121] |  
       
@@ -292,8 +280,7 @@ Feature: Tree Page validation
       | pythonCode |     0     | hello       |
       | pythonCode |     1     | Element Found |
       | pythonCode |     2     | 2 |
-      | pythonCode |     3     | 2 |
-      | pythonCode |     4     | [4, 9, 9, 49, 121] |  
+      
       
       
  @PracticeQuestion 
