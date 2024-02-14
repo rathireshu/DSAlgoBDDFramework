@@ -45,7 +45,7 @@ Feature: Graph page validation
     And user click the OK button in the alert window
     
       
- @GraphOption
+ @GraphOption 
   Scenario Outline: For Graph link system will show output for valid python input  
   
     When user clicks on Graph link option on graph home page

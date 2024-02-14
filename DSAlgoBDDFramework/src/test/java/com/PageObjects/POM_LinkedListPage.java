@@ -228,7 +228,7 @@ public class POM_LinkedListPage {
 	public void acceptAlert() throws InterruptedException {
 
 		Alert alert = driver.switchTo().alert();
-		Thread.sleep(1000);
+		//Thread.sleep(1000);
 		alert.accept();
 	}
 

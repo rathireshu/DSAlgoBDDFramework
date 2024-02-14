@@ -138,7 +138,7 @@ public class POM_GraphPage {
 	public void clickRunBtn() throws InterruptedException {
 
 		pyEditor_runBtn.click();
-		Thread.sleep(3000);
+		//Thread.sleep(3000);
 	}
 
 	public Alert isAlertPresent() {
@@ -157,7 +157,7 @@ public class POM_GraphPage {
 	public void acceptAlert() throws InterruptedException {
 
 		Alert alert = driver.switchTo().alert();
-		Thread.sleep(1000);
+		//Thread.sleep(1000);
 		alert.accept();
 		LoggerLoad.info("Alert accepted by user ...");
 	

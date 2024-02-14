@@ -39,10 +39,6 @@ public static WebElement waitForElementClickablity(WebDriver driver, WebElement 
 
 
 
-
-
-
-
 	public static void waitForPageLoad(WebDriver driver) {
 	
 		String pageLoadStatus =null;

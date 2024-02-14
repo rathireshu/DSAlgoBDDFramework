@@ -203,7 +203,7 @@ public class POM_ArraysPage {
 
 		pyEditor_SubmitBtn.click();
 		LoggerLoad.info("Submit button clicked on practice question...");
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 	}
 
 	public void sendValidInputIntoPyEditor(String input) {
@@ -246,7 +246,7 @@ public class POM_ArraysPage {
 	public void acceptAlert() throws InterruptedException {
 
 		Alert alert = driver.switchTo().alert();
-		Thread.sleep(1000);
+		//Thread.sleep(1000);
 		alert.accept();
 	}
 
