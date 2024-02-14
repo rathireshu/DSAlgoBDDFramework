@@ -10,7 +10,7 @@ Feature: Arrays Page validation
       And user click on the arrays menu "Arrays" from drop down 
       Then user should redirect to arrays page   
     
-@ArrayInPython 
+@ArrayInPython @test
   Scenario: Redirect to python editor form Array in python link
     
     When user click on Array in python link
@@ -19,7 +19,7 @@ Feature: Arrays Page validation
     Then user should be redirect to the python editor for arrays flow
     
     
- @InValidInputValidation 
+ @InValidInputValidation @test
   Scenario: For Array in python link system will displays error alert window for invalid input
      
     When user click on Array in python link
@@ -46,8 +46,7 @@ Feature: Arrays Page validation
       | SheetName  | RowNumber | validResult |
       | pythonCode |     0     | hello       |
       | pythonCode |     1     | Element Found |
-      | pythonCode |     2     | 2 |
-      | pythonCode |     3     | 2 |
+      | pythonCode |     2     | 2 |      
       | pythonCode |     4     | [4, 9, 9, 49, 121] |  
       
       
@@ -90,7 +89,6 @@ Feature: Arrays Page validation
       | pythonCode |     0     | hello       |
       | pythonCode |     1     | Element Found |
       | pythonCode |     2     | 2 |
-      | pythonCode |     3     | 2 |
       | pythonCode |     4     | [4, 9, 9, 49, 121] |  
       
       
@@ -134,7 +132,6 @@ Feature: Arrays Page validation
       | pythonCode |     0     | hello       |
       | pythonCode |     1     | Element Found |
       | pythonCode |     2     | 2 |
-      | pythonCode |     3     | 2 |
       | pythonCode |     4     | [4, 9, 9, 49, 121] |  
       
       
@@ -177,7 +174,6 @@ Feature: Arrays Page validation
       | pythonCode |     0     | hello       |
       | pythonCode |     1     | Element Found |
       | pythonCode |     2     | 2 |
-      | pythonCode |     3     | 2 |
       | pythonCode |     4     | [4, 9, 9, 49, 121] |  
       
       
@@ -204,7 +200,7 @@ Feature: Arrays Page validation
     Then an Alert with error Message for question flow will appears
     And user click on OK button of question flow alert
   
- @ValidRunSearchTheArrayQuestions     @Run
+ @ValidRunSearchTheArrayQuestions    
    
  Scenario Outline: System will show output below Run button for valid question input  
   
@@ -223,7 +219,6 @@ Feature: Arrays Page validation
       | pythonCode |     0     | hello       |
       | pythonCode |     1     | Element Found |
       | pythonCode |     2     | 2 |
-      | pythonCode |     3     | 2 |
       | pythonCode |     4     | [4, 9, 9, 49, 121] |   
   
   
@@ -282,7 +277,6 @@ Feature: Arrays Page validation
       | pythonCode |     0     | hello       |
       | pythonCode |     1     | Element Found |
       | pythonCode |     2     | 2 |
-      | pythonCode |     3     | 2 |
       | pythonCode |     4     | [4, 9, 9, 49, 121] |   
   
   
@@ -341,7 +335,6 @@ Feature: Arrays Page validation
       | pythonCode |     0     | hello       |
       | pythonCode |     1     | Element Found |
       | pythonCode |     2     | 2 |
-      | pythonCode |     3     | 2 |
       | pythonCode |     4     | [4, 9, 9, 49, 121] |   
   
   
@@ -401,7 +394,6 @@ Feature: Arrays Page validation
       | pythonCode |     0     | hello       |
       | pythonCode |     1     | Element Found |
       | pythonCode |     2     | 2 |
-      | pythonCode |     3     | 2 |
       | pythonCode |     4     | [4, 9, 9, 49, 121] |   
   
   

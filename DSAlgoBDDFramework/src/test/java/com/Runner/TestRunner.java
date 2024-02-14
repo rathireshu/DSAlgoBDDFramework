@@ -10,19 +10,18 @@ import io.cucumber.testng.CucumberOptions;
                  glue = {"com.StepDefinition", "com.ApplicationHooks" }, 
                  monochrome = true, 
 		         dryRun = false, 
-		         plugin = { "pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
-		        		 "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
+		         plugin = { "pretty","html:target/dsalgoReport.html", 
+		        		    "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
+		        		    "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
 		        		 }
 				)
 public class TestRunner extends AbstractTestNGCucumberTests {
-
-	
-	/*
-	 * @Override
-	 * 
-	 * @DataProvider(parallel = true) public Object[][] scenarios(){
-	 * 
-	 * return super.scenarios(); }
-	 */
+	 @Override	 
+	 @DataProvider(parallel = true) 
+	 public Object[][] scenarios()
+	   {	
+	       return super.scenarios(); 
+	   }
+	 
 	
 }
