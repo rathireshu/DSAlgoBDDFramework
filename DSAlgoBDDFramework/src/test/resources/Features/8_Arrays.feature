@@ -10,7 +10,7 @@ Feature: Arrays Page validation
       And user click on the arrays menu "Arrays" from drop down 
       Then user should redirect to arrays page   
     
-@ArrayInPython @test
+@ArrayInPython 
   Scenario: Redirect to python editor form Array in python link
     
     When user click on Array in python link
@@ -19,7 +19,7 @@ Feature: Arrays Page validation
     Then user should be redirect to the python editor for arrays flow
     
     
- @InValidInputValidation @test
+ @InValidInputValidation 
   Scenario: For Array in python link system will displays error alert window for invalid input
      
     When user click on Array in python link
