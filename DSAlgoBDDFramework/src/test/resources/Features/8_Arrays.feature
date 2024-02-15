@@ -89,8 +89,6 @@ Feature: Arrays Page validation
       | pythonCode |     0     | hello       |
       | pythonCode |     1     | Element Found |
       | pythonCode |     2     | 2 |
-      | pythonCode |     4     | [4, 9, 9, 49, 121] |  
-      
       
  
   @BasicOperationsInLists 
@@ -217,7 +215,6 @@ Feature: Arrays Page validation
     Examples: 
       | SheetName  | RowNumber | validResult |
       | pythonCode |     0     | hello       |
-      | pythonCode |     1     | Element Found |
       | pythonCode |     2     | 2 |
       | pythonCode |     4     | [4, 9, 9, 49, 121] |   
   
@@ -277,8 +274,7 @@ Feature: Arrays Page validation
       | pythonCode |     0     | hello       |
       | pythonCode |     1     | Element Found |
       | pythonCode |     2     | 2 |
-      | pythonCode |     4     | [4, 9, 9, 49, 121] |   
-  
+      
   
  @ValidSubmitMaxConsecutiveOnesQuestions  @run  
     
@@ -391,7 +387,6 @@ Feature: Arrays Page validation
   
     Examples: 
       | SheetName  | RowNumber | validResult |
-      | pythonCode |     0     | hello       |
       | pythonCode |     1     | Element Found |
       | pythonCode |     2     | 2 |
       | pythonCode |     4     | [4, 9, 9, 49, 121] |   

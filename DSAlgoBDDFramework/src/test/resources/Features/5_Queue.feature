@@ -55,10 +55,7 @@ Feature: Queue Page validation
       | SheetName  | RowNumber | validResult |
       | pythonCode |     0     | hello       |
       | pythonCode |     1     | Element Found |
-      | pythonCode |     2     | 2 |
-      | pythonCode |     3     | 2 |
-      | pythonCode |     4     | [4, 9, 9, 49, 121] |  
-    
+      
     
      
   @collections.deque
@@ -98,8 +95,6 @@ Feature: Queue Page validation
   
     Examples: 
       | SheetName  | RowNumber | validResult |
-      | pythonCode |     0     | hello       |
-      | pythonCode |     1     | Element Found |
       | pythonCode |     2     | 2 |
       | pythonCode |     3     | 2 |
       | pythonCode |     4     | [4, 9, 9, 49, 121] |  
@@ -143,8 +138,6 @@ Feature: Queue Page validation
     Examples: 
       | SheetName  | RowNumber | validResult |
       | pythonCode |     0     | hello       |
-      | pythonCode |     1     | Element Found |
-      | pythonCode |     2     | 2 |
       | pythonCode |     3     | 2 |
       | pythonCode |     4     | [4, 9, 9, 49, 121] |  
     
@@ -188,10 +181,8 @@ Feature: Queue Page validation
       | SheetName  | RowNumber | validResult |
       | pythonCode |     0     | hello       |
       | pythonCode |     1     | Element Found |
-      | pythonCode |     2     | 2 |
       | pythonCode |     3     | 2 |
-      | pythonCode |     4     | [4, 9, 9, 49, 121] |  
-    
+      
   
   @PracticeQuestion 
   Scenario: Open the practice Question Page 

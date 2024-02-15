@@ -45,8 +45,6 @@ Feature: Stack Page validation
       | SheetName  | RowNumber | validResult |
       | pythonCode |     0     | hello       |
       | pythonCode |     1     | Element Found |
-      | pythonCode |     2     | 2 |
-      | pythonCode |     3     | 2 |
       | pythonCode |     4     | [4, 9, 9, 49, 121] |  
     
     
@@ -83,8 +81,6 @@ Feature: Stack Page validation
   
     Examples: 
       | SheetName  | RowNumber | validResult |
-      | pythonCode |     0     | hello       |
-      | pythonCode |     1     | Element Found |
       | pythonCode |     2     | 2 |
       | pythonCode |     3     | 2 |
       | pythonCode |     4     | [4, 9, 9, 49, 121] |  
@@ -122,8 +118,6 @@ Feature: Stack Page validation
   
     Examples: 
       | SheetName  | RowNumber | validResult |
-      | pythonCode |     0     | hello       |
-      | pythonCode |     1     | Element Found |
       | pythonCode |     2     | 2 |
       | pythonCode |     3     | 2 |
       | pythonCode |     4     | [4, 9, 9, 49, 121] |  

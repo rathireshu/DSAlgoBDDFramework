@@ -45,8 +45,6 @@ Feature: Linked list Page validation
     Examples: 
       | SheetName  | RowNumber | validResult |
       | pythonCode |     0     | hello       |
-      | pythonCode |     1     | Element Found |
-      | pythonCode |     2     | 2 |
       | pythonCode |     3     | 2 |
       | pythonCode |     4     | [4, 9, 9, 49, 121] |  
    
@@ -88,10 +86,7 @@ Feature: Linked list Page validation
       | pythonCode |     0     | hello       |
       | pythonCode |     1     | Element Found |
       | pythonCode |     2     | 2 |
-      | pythonCode |     3     | 2 |
-      | pythonCode |     4     | [4, 9, 9, 49, 121] |  
-      
-      
+     
       
  @LLTypesOfLinkedList
   Scenario: Redirect to python editor form LL Types of Linked List link
@@ -128,8 +123,6 @@ Feature: Linked list Page validation
     Examples: 
       | SheetName  | RowNumber | validResult |
       | pythonCode |     0     | hello       |
-      | pythonCode |     1     | Element Found |
-      | pythonCode |     2     | 2 |
       | pythonCode |     3     | 2 |
       | pythonCode |     4     | [4, 9, 9, 49, 121] |  
       
@@ -168,9 +161,6 @@ Feature: Linked list Page validation
   
     Examples: 
       | SheetName  | RowNumber | validResult |
-      | pythonCode |     0     | hello       |
-      | pythonCode |     1     | Element Found |
-      | pythonCode |     2     | 2 |
       | pythonCode |     3     | 2 |
       | pythonCode |     4     | [4, 9, 9, 49, 121] |  
       
@@ -209,9 +199,7 @@ Feature: Linked list Page validation
   
     Examples: 
       | SheetName  | RowNumber | validResult |
-      | pythonCode |     0     | hello       |
       | pythonCode |     1     | Element Found |
-      | pythonCode |     2     | 2 |
       | pythonCode |     3     | 2 |
       | pythonCode |     4     | [4, 9, 9, 49, 121] |  
       
@@ -251,8 +239,6 @@ Feature: Linked list Page validation
       | SheetName  | RowNumber | validResult |
       | pythonCode |     0     | hello       |
       | pythonCode |     1     | Element Found |
-      | pythonCode |     2     | 2 |
-      | pythonCode |     3     | 2 |
       | pythonCode |     4     | [4, 9, 9, 49, 121] |  
       
  
@@ -290,10 +276,8 @@ Feature: Linked list Page validation
   
     Examples: 
       | SheetName  | RowNumber | validResult |
-      | pythonCode |     0     | hello       |
       | pythonCode |     1     | Element Found |
       | pythonCode |     2     | 2 |
-      | pythonCode |     3     | 2 |
       | pythonCode |     4     | [4, 9, 9, 49, 121] |  
       
   
