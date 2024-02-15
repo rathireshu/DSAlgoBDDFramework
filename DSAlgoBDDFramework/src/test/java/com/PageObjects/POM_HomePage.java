@@ -193,6 +193,7 @@ public class POM_HomePage {
 		  
 		if(menuItem.getText().equals(menuName)){
 			 ElementUtil.clickOnElement(driver, menuItem, Constant.EXPLICIT_ELEMENT_WAIT_TIME);
+			 ElementUtil.waitForPageLoad(driver);
 			break;
 	     }
 	}  

@@ -27,7 +27,7 @@ public class StepDef_Tree {
 	public void user_click_on_the_tree_menu_from_drop_down(String DropDownMenuName) {
 
 		picoDepInj.homePage.clickOnGivenDSDropDownMenu(DropDownMenuName);
-		LoggerLoad.info("user selected queue from drop down menu.");
+		LoggerLoad.info("user selected tree from drop down menu.");
 	}
 
 	@Then("user should redirect to Tree home page")
