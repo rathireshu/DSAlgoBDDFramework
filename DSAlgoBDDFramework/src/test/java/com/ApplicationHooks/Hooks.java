@@ -1,6 +1,7 @@
 package com.ApplicationHooks;
 
 import java.io.ByteArrayInputStream;
+import java.time.Duration;
 import java.util.Properties;
 
 import org.openqa.selenium.OutputType;
@@ -8,6 +9,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import com.DriverFactory.DriverFactory;
 import com.Utilities.ConfigReader;
+import com.Utilities.Constant;
 import com.Utilities.LoggerLoad;
 
 
@@ -28,20 +30,21 @@ public class Hooks {
 	public void setUp() {
 		//Get Browser type from config file
 		prop = ConfigReader.getPropertyObject();
-		String browseName = prop.getProperty("browser");
-		
+		String browseName = prop.getProperty("browser");		
 		//Initialize driver from driver factory class
 		dFactory = new DriverFactory();
 		driver = dFactory.initializeDriver(browseName);
 		LoggerLoad.info("Initializing driver for browser :"+browseName);
 		driver.get(prop.getProperty("url"));
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(Constant.IMPLICIT_PAGE_LOAD));
 	}
 
 	@After
 	public void tearDown(Scenario scenario) {
 		
-		if(scenario.isFailed())
+		if(driver!=null && scenario.isFailed())
 		{
+			
 			byte[] screenShot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
 			Allure.addAttachment("Failed Scenario Screenshot", new ByteArrayInputStream(screenShot));
 		}

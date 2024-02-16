@@ -1,13 +1,13 @@
 @HomePage
 Feature: Home page verification feature
 
- @NoSignInWaringDefault
+ @NoSignInWaringDefault @run
   Scenario: verify Sign-In warning message is not present by default
     Given user is already on dsportalapp home page 
     When User is not signed in already
     Then User should not get warning message by default  
     
-  @GetStartedAccessWithoutSignIn
+  @GetStartedAccessWithoutSignIn @run
   Scenario: user should be able to access GetStarted without sign in
     Given user is already on dsportalapp home page 
     When User is not signed in already

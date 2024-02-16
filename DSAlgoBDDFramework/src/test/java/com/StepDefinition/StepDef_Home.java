@@ -21,8 +21,7 @@ public class StepDef_Home {
 	}
 	
 	@Given("user is already on dsportalapp home page")
-	public void user_is_already_on_dsportalapp_home_page_and_not_sign_in() {
-		
+	public void user_is_already_on_dsportalapp_home_page_and_not_sign_in() {		
 		picoDepInj.homePage = new POM_HomePage(DriverFactory.getDriver());		
 		String title = picoDepInj.homePage.getHomePageTitle();
 		LoggerLoad.info("Home Page title is :-"+title);
@@ -78,9 +77,6 @@ public class StepDef_Home {
 		picoDepInj.homePage.clickOnGivenDSDropDownMenu(dropDownMenu);
 		
 	}
-	
-	
-	
 
 	@Then("User should see six data structure options in list")
 	public void user_should_see_seven_data_structure_options_in_list() {

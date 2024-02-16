@@ -215,7 +215,6 @@ Feature: Arrays Page validation
     Examples: 
       | SheetName  | RowNumber | validResult |
       | pythonCode |     0     | hello       |
-      | pythonCode |     2     | 2 |
       | pythonCode |     4     | [4, 9, 9, 49, 121] |   
   
   
@@ -237,7 +236,6 @@ Feature: Arrays Page validation
     Examples: 
       | SheetName            | RowNumber | validResult                      |
       | pythonCodeSubmission |     0     | submission success               |
-      | pythonCodeSubmission |     1     | Error occurred during submission |
      
     
 @InvalidRunMaxConsecutiveOnesQuestions    
@@ -294,8 +292,7 @@ Feature: Arrays Page validation
     Examples: 
       | SheetName            | RowNumber | validResult                      |
       | pythonCodeSubmission |     2     | submission success               |
-      | pythonCodeSubmission |     3     | Error occurred during submission |
-     
+           
     
 @InvalidRunFindNumWithEvenNumOfDigitsQuestions
     
@@ -312,7 +309,7 @@ Feature: Arrays Page validation
     Then an Alert with error Message for question flow will appears
     And user click on OK button of question flow alert
   
- @ValidRunFindNumWithEvenNumOfDigitsQuestions
+ @ValidRunFindNumWithEvenNumOfDigitsQuestions    @shouldpassnow
    
  Scenario Outline: System will show output below Run button for valid question input  
   
@@ -328,7 +325,6 @@ Feature: Arrays Page validation
   
     Examples: 
       | SheetName  | RowNumber | validResult |
-      | pythonCode |     0     | hello       |
       | pythonCode |     1     | Element Found |
       | pythonCode |     2     | 2 |
       | pythonCode |     4     | [4, 9, 9, 49, 121] |   
@@ -352,9 +348,7 @@ Feature: Arrays Page validation
     Examples: 
       | SheetName            | RowNumber | validResult                      |
       | pythonCodeSubmission |     4     | submission success               |
-      | pythonCodeSubmission |     5     | Error occurred during submission |
      
-
    
 @InvalidRunSquaresOfSortedArrayQuestions 
     

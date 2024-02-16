@@ -68,10 +68,11 @@ public class POM_LinkedListPage {
 	}
 
 
-   public void clickOnIntroductionLink() {
+   public void clickOnIntroductionLink()  {
 		
 		ElementUtil.javaScriptScrollToElement(driver, introductionLink, Constant.EXPLICIT_ELEMENT_WAIT_TIME);
 		ElementUtil.javaScriptClick(driver, introductionLink, Constant.EXPLICIT_ELEMENT_WAIT_TIME);
+		ElementUtil.waitForElementVisibility(driver, tryHereBtn, Constant.EXPLICIT_ELEMENT_WAIT_TIME);
 	}	
 
 	public String getIntroductionPageUrl() {
@@ -83,6 +84,7 @@ public class POM_LinkedListPage {
 		
 		ElementUtil.javaScriptScrollToElement(driver, creatingLinkedListLink, Constant.EXPLICIT_ELEMENT_WAIT_TIME);
 		ElementUtil.javaScriptClick(driver, creatingLinkedListLink, Constant.EXPLICIT_ELEMENT_WAIT_TIME);
+		ElementUtil.waitForElementVisibility(driver, tryHereBtn, Constant.EXPLICIT_ELEMENT_WAIT_TIME);
 	}	
 
 	public String getCreatingLinkedListPageUrl() {
@@ -94,6 +96,7 @@ public class POM_LinkedListPage {
 		
 		ElementUtil.javaScriptScrollToElement(driver, typesOfLinkedListLink, Constant.EXPLICIT_ELEMENT_WAIT_TIME);
 		ElementUtil.javaScriptClick(driver, typesOfLinkedListLink, Constant.EXPLICIT_ELEMENT_WAIT_TIME);
+		ElementUtil.waitForElementVisibility(driver, tryHereBtn, Constant.EXPLICIT_ELEMENT_WAIT_TIME);
 	}	
 
 	public String getTypesOfLinkedListPageUrl() {
@@ -105,6 +108,7 @@ public class POM_LinkedListPage {
 		
 		ElementUtil.javaScriptScrollToElement(driver, implementLinkedListInPythonLink, Constant.EXPLICIT_ELEMENT_WAIT_TIME);
 		ElementUtil.javaScriptClick(driver, implementLinkedListInPythonLink, Constant.EXPLICIT_ELEMENT_WAIT_TIME);
+		ElementUtil.waitForElementVisibility(driver, tryHereBtn, Constant.EXPLICIT_ELEMENT_WAIT_TIME);
 	}	
 
 	public String getImplementLinkedListInPythonPageUrl() {
@@ -117,6 +121,7 @@ public class POM_LinkedListPage {
 		
 		ElementUtil.javaScriptScrollToElement(driver, traversalLink, Constant.EXPLICIT_ELEMENT_WAIT_TIME);
 		ElementUtil.javaScriptClick(driver, traversalLink, Constant.EXPLICIT_ELEMENT_WAIT_TIME);
+		ElementUtil.waitForElementVisibility(driver, tryHereBtn, Constant.EXPLICIT_ELEMENT_WAIT_TIME);
 	}	
 
 	public String getTraversalPageUrl() {
@@ -129,6 +134,7 @@ public class POM_LinkedListPage {
 		
 		ElementUtil.javaScriptScrollToElement(driver, insertionLink, Constant.EXPLICIT_ELEMENT_WAIT_TIME);
 		ElementUtil.javaScriptClick(driver, insertionLink, Constant.EXPLICIT_ELEMENT_WAIT_TIME);
+		ElementUtil.waitForElementVisibility(driver, tryHereBtn, Constant.EXPLICIT_ELEMENT_WAIT_TIME);
 	}	
 
 	public String getInsertionPageUrl() {
@@ -141,6 +147,7 @@ public class POM_LinkedListPage {
 			
 			ElementUtil.javaScriptScrollToElement(driver, deletionLink, Constant.EXPLICIT_ELEMENT_WAIT_TIME);
 			ElementUtil.javaScriptClick(driver, deletionLink, Constant.EXPLICIT_ELEMENT_WAIT_TIME);
+			ElementUtil.waitForElementVisibility(driver, tryHereBtn, Constant.EXPLICIT_ELEMENT_WAIT_TIME);
 		}	
 
 		public String getDeletionPageUrl() {
@@ -175,9 +182,12 @@ public class POM_LinkedListPage {
 
 	public void clickOnTryHereBtn() {
 
-		tryHereBtn.click();
+		//tryHereBtn.click();
+		ElementUtil.javaScriptScrollToElement(driver, tryHereBtn, Constant.EXPLICIT_ELEMENT_WAIT_TIME);
+		ElementUtil.javaScriptClick(driver, tryHereBtn, Constant.EXPLICIT_ELEMENT_WAIT_TIME);		
 		LoggerLoad.info("Try Here btn clicked ...");
 		ElementUtil.waitForPageLoad(driver);
+		ElementUtil.waitForElementVisibility(driver, pyEditor_runBtn, Constant.EXPLICIT_ELEMENT_WAIT_TIME);
 
 	}
 

@@ -19,7 +19,7 @@ Feature: Linked list Page validation
     Then user should be redirect to the python editor for lined list flow
     
     
-   @InValidInputValidation 
+   @InValidInputValidation  @run
   Scenario: For LL Introduction link system will displays error alert window for invalid input
      
     When user click on LL Introduction link
@@ -31,7 +31,7 @@ Feature: Linked list Page validation
     Then an Alert with error Message for lined list flow will appears
     And user click on OK button of lined list flow alert
  
- @ValidInputValidation 
+ @ValidInputValidation @run
   Scenario Outline: System will show output below run button for valid python input  
   
      When user click on LL Introduction link
@@ -127,7 +127,7 @@ Feature: Linked list Page validation
       | pythonCode |     4     | [4, 9, 9, 49, 121] |  
       
  
- @LLImplementLinkedListInPython
+ @LLImplementLinkedListInPython 
   Scenario: Redirect to python editor form LL Implement Linked List in Python link
     
     When user click on LL Implement Linked List in Python link
@@ -136,7 +136,7 @@ Feature: Linked list Page validation
     Then user should be redirect to the python editor for lined list flow
     
     
-   @InValidInputValidation 
+   @InValidInputValidation
   Scenario: For LL Implement Linked List in Python link system will displays error alert window for invalid input
      
     When user click on LL Implement Linked List in Python link
@@ -165,7 +165,7 @@ Feature: Linked list Page validation
       | pythonCode |     4     | [4, 9, 9, 49, 121] |  
       
  
- @LLTraversal
+ @LLTraversal 
   Scenario: Redirect to python editor form LL Traversal link
     
     When user click on LL Traversal link
@@ -174,7 +174,7 @@ Feature: Linked list Page validation
     Then user should be redirect to the python editor for lined list flow
     
     
-   @InValidInputValidation 
+   @InValidInputValidation
   Scenario: For LL Traversal link system will displays error alert window for invalid input
      
     When user click on LL Traversal link
@@ -186,7 +186,7 @@ Feature: Linked list Page validation
     Then an Alert with error Message for lined list flow will appears
     And user click on OK button of lined list flow alert
  
- @ValidInputValidation 
+ @ValidInputValidation  
   Scenario Outline: System will show output below run button for valid python input  
   
     When user click on LL Traversal link
