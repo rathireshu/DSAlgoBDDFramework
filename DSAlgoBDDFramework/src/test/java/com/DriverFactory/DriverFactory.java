@@ -32,10 +32,8 @@ public class DriverFactory {
 		
 		browser=browser.toLowerCase();
 		try {
-			
 			switch (browser)
 					{
-            
             case headlesschrome:
             	LoggerLoad.info("Initializing Chrome Browser in headless mode...");
 				ChromeOptions chromeOptions = new ChromeOptions();
@@ -47,19 +45,16 @@ public class DriverFactory {
             	LoggerLoad.info("Initializing firefox Browser...");
             	thdriver.set(new FirefoxDriver());
             case headlessfirefox:
-            	
                 LoggerLoad.info("Initializing Firefox Browser in headless mode....");
 				FirefoxOptions firefoxOptions=new FirefoxOptions();
 				firefoxOptions.addArguments("headless");
 				firefoxOptions.addArguments("window-size=1366,768"); 
 				thdriver.set(new FirefoxDriver(firefoxOptions));
             	break;
-            	
             case edge:
             	LoggerLoad.info("Initializing edge Browser...");
             	thdriver.set(new EdgeDriver());
             	break;
-            	
             case headlessedge:
             	LoggerLoad.info("Initializing edge Browser in headless mode....");
             	EdgeOptions edgeOptions=new EdgeOptions();
@@ -67,12 +62,10 @@ public class DriverFactory {
 				edgeOptions.addArguments("window-size=1366,768");
 				thdriver.set(new EdgeDriver(edgeOptions));
             	break;
-			
 		     case safari:
         	   LoggerLoad.info("Initializing safari Browser...");
 			   thdriver.set(new SafariDriver());
         	   break;
-        	   
 		     default:
 	            	LoggerLoad.info("Initializing Chrome Browser...");
 	            	thdriver.set(new ChromeDriver());

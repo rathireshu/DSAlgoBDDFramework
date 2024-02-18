@@ -10,7 +10,7 @@ Feature: Tree Page validation
       And user click on the Tree menu "Tree" from drop down 
       Then user should redirect to Tree home page   
     
-@OverviewOfTrees @run
+@OverviewOfTrees 
   Scenario: Redirect to python editor form Overview of Trees link
     
     When user click on Overview of Trees link
@@ -19,7 +19,7 @@ Feature: Tree Page validation
     Then user should be redirect to the python editor for tree flow
     
     
-@InValidInputValidation @run
+@InValidInputValidation 
   Scenario: For Overview of Trees link system will displays error alert window for invalid input
      
     When user click on Overview of Trees link
@@ -212,7 +212,7 @@ Feature: Tree Page validation
     Then user should be redirect to the python editor for tree flow
     
     
-@InValidInputValidation 
+@InValidInputValidation @run
   Scenario: For Binary Trees link system will displays error alert window for invalid input
      
     When user click on Binary Trees link

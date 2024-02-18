@@ -212,7 +212,7 @@ Feature: Linked list Page validation
     Then user should be redirect to the python editor for lined list flow
     
     
-   @InValidInputValidation 
+   @InValidInputValidation @run
   Scenario: For LL Insertion link system will displays error alert window for invalid input
      
     When user click on LL Insertion link

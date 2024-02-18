@@ -34,22 +34,20 @@ public class Hooks {
 		//Initialize driver from driver factory class
 		dFactory = new DriverFactory();
 		driver = dFactory.initializeDriver(browseName);
-		LoggerLoad.info("Initializing driver for browser :"+browseName);
+		LoggerLoad.info("Hook:-Initializing driver for browser :"+browseName);
 		driver.get(prop.getProperty("url"));
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(Constant.IMPLICIT_PAGE_LOAD));
+		LoggerLoad.info("Hook:-homr pagr url opened successfully");
 	}
 
 	@After
-	public void tearDown(Scenario scenario) {
-		
+	public void tearDown(Scenario scenario) {		
 		if(driver!=null && scenario.isFailed())
-		{
-			
+		{			
 			byte[] screenShot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
 			Allure.addAttachment("Failed Scenario Screenshot", new ByteArrayInputStream(screenShot));
 		}
-		LoggerLoad.info("Closing driver from hook's teardown method...");
-		
+		LoggerLoad.info("Closing driver from hook's teardown method...");		
 		if(driver!=null)
 		driver.quit();
 	}

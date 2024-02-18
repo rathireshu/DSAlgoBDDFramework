@@ -1,7 +1,8 @@
 /target/
 /test-output/
-/test-output-pdf/
-/test-output-html/
+/extent-reports/
+/allure-results/
+/cucumber-report/
 /Logs/
 /.settings/
 *.classpath

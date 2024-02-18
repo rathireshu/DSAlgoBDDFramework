@@ -274,7 +274,7 @@ Feature: Arrays Page validation
       | pythonCode |     2     | 2 |
       
   
- @ValidSubmitMaxConsecutiveOnesQuestions  @run  
+ @ValidSubmitMaxConsecutiveOnesQuestions   
     
     Scenario Outline: Error message in console for valid input Submit flow of Max Consecutive Ones question
     
@@ -309,7 +309,7 @@ Feature: Arrays Page validation
     Then an Alert with error Message for question flow will appears
     And user click on OK button of question flow alert
   
- @ValidRunFindNumWithEvenNumOfDigitsQuestions    @shouldpassnow
+ @ValidRunFindNumWithEvenNumOfDigitsQuestions   
    
  Scenario Outline: System will show output below Run button for valid question input  
   
