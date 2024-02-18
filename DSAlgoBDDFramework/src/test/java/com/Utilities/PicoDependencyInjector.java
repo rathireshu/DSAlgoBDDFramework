@@ -12,15 +12,11 @@ import com.PageObjects.POM_StackPage;
 import com.PageObjects.POM_TreePage;
 
 public class PicoDependencyInjector {
-
 	/*
 	 * In this class we declare the variables that are to be used commonly. Mind that, they
 	 * are initialized in their respective classes and pose a state (initialized).
 	 * We just declare them in this class so that they can be used across the step
-	 * definition classes.
-	 */
-	
-	
+	 * definition classes. */	
 	 public POM_HomePage homePage;
 	 public	POM_SignInPage signInPage;
 	 public POM_RegisterPage registerPage;
@@ -37,6 +33,4 @@ public class PicoDependencyInjector {
 	 public POM_StackPage stackPage;
 	 public POM_LinkedListPage linkedListPage;
 	 public POM_ArraysPage arraysPage;
-	 
-	
 }
