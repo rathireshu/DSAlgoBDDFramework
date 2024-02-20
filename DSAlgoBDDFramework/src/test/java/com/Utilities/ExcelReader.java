@@ -41,31 +41,34 @@ public class ExcelReader {
 	private List<Map<String,String>> readSheet(XSSFSheet sheet) {
 	    
 		
-	  int totalRow=sheet.getLastRowNum();
+	  int totalRow=sheet.getPhysicalNumberOfRows();
 			
 	  List<Map<String,String>> excelRows = new ArrayList<Map<String,String>>();
 			
 	  for(int currentRow=1; currentRow <= totalRow; currentRow++)
 			{
 				XSSFRow row=sheet.getRow(currentRow);
-				
-				int totalCol = row.getLastCellNum();
-				
-				Map<String,String> colMapData = new HashMap<String,String>();
-				
-				for(int currentCol=0; currentCol < totalCol; currentCol++)
-				{
-					XSSFCell cell=row.getCell(currentCol);
+				if(null != row) {
+					int totalCol = row.getLastCellNum();
 					
-					String colHeaderName= sheet.getRow(sheet.getFirstRowNum()).getCell(currentCol).getStringCellValue();
-					colMapData.put(colHeaderName, cell.getStringCellValue());
-			    }
-			    
-				excelRows.add(colMapData);
+					Map<String,String> colMapData = new HashMap<String,String>();
+					
+					for(int currentCol=0; currentCol < totalCol; currentCol++)
+					{
+						XSSFCell cell=row.getCell(currentCol);
+						
+						String colHeaderName= sheet.getRow(sheet.getFirstRowNum()).getCell(currentCol).getStringCellValue();
+						colMapData.put(colHeaderName, cell.getStringCellValue());
+				    }
+				    
+					excelRows.add(colMapData);
+				}
+				
 			}
 			return excelRows;
 			
 	}
+	
 	
 	
 }

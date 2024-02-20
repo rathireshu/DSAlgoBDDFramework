@@ -20,7 +20,7 @@ public class ConfigReader {
 	 }
     }
 	
-	public static Properties getProperties() {
+	public static Properties getPropertyObject() {
 		if( pro == null ) {
 			initialize();
 		}

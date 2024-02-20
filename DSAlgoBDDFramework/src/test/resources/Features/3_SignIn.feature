@@ -1,6 +1,8 @@
 @SignIn
 Feature: SignIn and SignOut validation feature
- @tag1
+ 
+ 
+ @ValidSignIn
   Scenario: Sign-in with valid user name and valid passwrod
     Given User is already on SignIn page
     When User enters valid "sdetwarriors" and valid "sdet@146"
@@ -10,7 +12,7 @@ Feature: SignIn and SignOut validation feature
     When User click on Sign-out button
     Then User should get Signout alert message "Logged out successfully" on home page.
 
-  @tag3
+  @InValidSignIn
   Scenario Outline: Sign-in with invalid username and passwrod 
     Given User is already on SignIn page
     When User enters the "<SheetName>" and <RowNumber>
@@ -23,21 +25,21 @@ Feature: SignIn and SignOut validation feature
       | loginData  |     1     | Invalid Username and Password|
       | loginData  |     2     | Invalid Username and Password|
   
-   @tag4
+ @BlankUserNameOnSignIn
   Scenario: Verification for PopUp message appears for blank username 
     Given User is already on SignIn page
     When User provides username " " and password "test@123"
     And User click on login button
     Then User should get alert message "Please fill out this field." below username "username" field.
     
-    @tag5
+ @BlankPasswordOnSignIn
   Scenario: Verification for PopUp message appears for blank password 
     Given User is already on SignIn page
     When User provides username "test123" and password " ".
     And User click on login button
     Then User should get alert message "Please fill out this field." below password "password" field.
     
-  @tag6
+  @RegisterLink
   Scenario: Register link on varification 
     Given User is already on SignIn page
     When User click on Register link below input fields on SignIn page

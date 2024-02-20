@@ -23,12 +23,24 @@ public class POM_HomePage {
 	@FindBy(xpath = "//a[text()='Data Structures']")
 	WebElement dataStructureDD;
 
+	@FindBy(xpath = "//a[text()='Graph']")
+	WebElement graphDDMenu;
+
 	@FindBy(xpath = "//div[@class='dropdown-menu show']/a")
 	List<WebElement> dataStrDDList;
 
 	@FindBy(xpath = "//a[text()='Get Started']")
-	List<WebElement> getStartedBtns;
+	List<WebElement> getStartedBtnsList;
 
+	@FindBy (xpath ="//h5[text()='Graph']/..//a[text()='Get Started']")
+	WebElement getStartedGraphBtn;
+	
+	@FindBy (xpath ="//h5[text()='Queue']/..//a[text()='Get Started']")
+	WebElement getStartedQueueBtn;
+	
+	@FindBy (xpath ="//h5[text()='Data Structures-Introduction']/..//a[text()='Get Started']")
+	WebElement getStartedDataStrIntoBtn;
+	
 	@FindBy(xpath = "//a[text()=' Register ']")
 	WebElement registerBtn;
 
@@ -63,7 +75,8 @@ public class POM_HomePage {
 	public void clickDataStructureDD() {
 		ElementUtil.clickOnElement(driver, dataStructureDD, Constant.EXPLICIT_ELEMENT_WAIT_TIME);
 	}
-
+	
+	
 	public int verifyDataStrDDListCount() {
 		return dataStrDDList.size();
 	}
@@ -86,15 +99,15 @@ public class POM_HomePage {
 	}
 
 	public boolean verifyGetStartedBtnEnable() {
-		return getStartedBtns.get(0).isEnabled();
+		return getStartedBtnsList.get(0).isEnabled();
 	}
 
 	public int verifyGetStartedBtnsCount() {
-		return getStartedBtns.size();
+		return getStartedBtnsList.size();
 	}
 
 	public void clickOnGetStartedBtn() {
-		getStartedBtns.get(0).click();
+		getStartedBtnsList.get(0).click();
 	}
 
 	public int verifyNotSignInMsgNotPresent() {
@@ -104,6 +117,7 @@ public class POM_HomePage {
 	}
 
 	public void clickOnSignInBtn() {
+		
 		ElementUtil.clickOnElement(driver, signInBtn, Constant.EXPLICIT_ELEMENT_WAIT_TIME);
 	}
 	
@@ -114,6 +128,7 @@ public class POM_HomePage {
 		}
 	
 	public void clickOnSignOutBtn() {
+		
 		ElementUtil.clickOnElement(driver, signOutBtn, Constant.EXPLICIT_ELEMENT_WAIT_TIME);
 	}
 	
@@ -149,8 +164,81 @@ public class POM_HomePage {
 	  return new POM_RegisterPage(driver);
 		
 	}
+  
+  public void clickOnGraphGetStartedBtn() {
+		
+		 ElementUtil.clickOnElement(driver, getStartedGraphBtn, Constant.EXPLICIT_ELEMENT_WAIT_TIME);
+	}
 	
+  public void clickOnDataStrIntoGetStartedBtn() {
+		
+		 ElementUtil.clickOnElement(driver, getStartedDataStrIntoBtn, Constant.EXPLICIT_ELEMENT_WAIT_TIME);
+	}
+  
+  public void clickOnGraphDropDownMenu() {
+		
+	  graphDDMenu.click();
+		
+	}
+
+  public void clickOnQueueGetStartedBtn() {
+		
+		 ElementUtil.clickOnElement(driver, getStartedQueueBtn, Constant.EXPLICIT_ELEMENT_WAIT_TIME);
 	
+  }
+  
+  public void clickOnGivenDSDropDownMenu(String menuName) {
+	  
+	for(WebElement menuItem : dataStrDDList){
+		  
+		if(menuItem.getText().equals(menuName)){
+			 ElementUtil.clickOnElement(driver, menuItem, Constant.EXPLICIT_ELEMENT_WAIT_TIME);
+			 ElementUtil.waitForPageLoad(driver);
+			break;
+	     }
+	}  
+}
+  public POM_GraphPage verifyUserRedirectedToGraphPage() {
+		
+  	  return new POM_GraphPage(driver);
+  		
+  	}
 	
+  public POM_QueuePage verifyUserRedirectedToQueuePage() {
+		
+  	  return new POM_QueuePage(driver);
+  		
+  	}
+  
+  public POM_DataStrucIntroPage verifyUserRedirectedToDataStrIntroPage() {
+		
+  	  return new POM_DataStrucIntroPage (driver);
+  		
+  	}
+  
+  public POM_StackPage verifyUserRedirectedToStackPage() {
+		
+  	  return new POM_StackPage (driver);
+  		
+  	}
 	
+  public POM_ArraysPage verifyUserRedirectedToArraysPage() {
+		
+  	  return new POM_ArraysPage (driver);
+  		
+  	}
+	
+  
+  public POM_LinkedListPage verifyUserRedirectedToLinkedListPage() {
+		
+  	  return new POM_LinkedListPage (driver);
+  		
+  	}
+	
+  
+  public POM_TreePage verifyUserRedirectedToTreePage() {
+		
+  	  return new POM_TreePage (driver);
+  		
+  	}
 }

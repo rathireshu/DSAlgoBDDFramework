@@ -40,6 +40,10 @@ public class POM_RegisterPage {
 	@FindBy(xpath = "//div[@class='alert alert-primary']")
 	WebElement registerPage_pwdMismatchError;
 	
+	@FindBy(xpath = "//div[@class='navbar-nav']/ul/a[2]")
+	WebElement registerUsernameLink;
+	
+	
 	
 	
 	public String getRegisterPageTitle() {
@@ -68,6 +72,10 @@ public class POM_RegisterPage {
 		ElementUtil.clickOnElement(driver, registerPage_RegisterBtn, Constant.EXPLICIT_ELEMENT_WAIT_TIME);
 	}
 	
+   public String getRegisteredUserName() {
+		
+		return registerUsernameLink.getText();
+	}
 	
 	public String getPopUpTextOnBlankField()
 	{
